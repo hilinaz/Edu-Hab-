@@ -16,7 +16,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"
-import { useRemember } from "@inertiajs/react"
+import { useRemember, router } from "@inertiajs/react"
+import { RichTextEditor } from "./lesson/editor copy";
 
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -241,13 +242,14 @@ function LessonForm({
 
             <div className="grid gap-3">
                 <Label htmlFor={`lesson-content-${lesson.id}`}>Content</Label>
-                <Textarea
+                {/* <Textarea
                     id={`lesson-content-${lesson.id}`}
                     value={lesson.content}
                     onChange={(e) => onUpdate({ content: e.target.value })}
                     placeholder="Enter lesson content or URL"
                     rows={3}
-                />
+                /> */}
+                <RichTextEditor />
             </div>
         </div>
     )
@@ -399,12 +401,25 @@ function CourseForm() {
             }),
         }))
     }
-
     const saveCourse = () => {
-        // Here you would typically save to a database
-        console.log("Saving course:", course)
-        toast("Your course has been saved successfully.")
-    }
+        const payload : Record<string, any> = {
+            ...course
+        } 
+
+        router.post(
+            '/courses/create',
+            payload,
+            {
+                onSuccess: () => {
+                    toast.success("Your course has been saved successfully.");
+                },
+                onError: (errors) => {
+                    toast.error("Failed to save the course. Please check the details.");
+                    console.error("Validation errors:", errors);
+                },
+            }
+        );
+    };
 
     return (
         <div className="grid grid-cols-1 gap-8">

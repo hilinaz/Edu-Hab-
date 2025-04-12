@@ -18,7 +18,7 @@ export default function CreateCoursePage() {
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Create Course" />
             <div className="flex h-full flex-1 flex-col gap-4 rounded-xl p-25 pt-4">
-                <h1>Create a new course by filling all the required details</h1>
+                <h1>Create a new course here</h1>
                 <CourseForm />
             </div>
         </AppLayout>

@@ -9,4 +9,15 @@ class Course extends Model
 {
     /** @use HasFactory<\Database\Factories\CourseFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'description',
+        'created_by',
+        // 'instructor',
+        'price',
+        'thumbnail',
+        'level',
+        'duration'
+    ];
 }

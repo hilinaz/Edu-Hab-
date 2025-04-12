@@ -11,7 +11,7 @@ import { Link } from "@inertiajs/react"
 export function DashboardOverview() {
   return (
     <div className="grid gap-4 md:gap-8 mt-4">
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      {/* <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <MetricCard
           title="Total Courses"
           value="12"
@@ -40,16 +40,16 @@ export function DashboardOverview() {
           trend="+5%"
           trendType="positive"
         />
-      </div>
+      </div> */}
 
-      <div className="grid gap-4 md:grid-cols-2">
+      {/* <div className="grid gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Enrollment Trends</CardTitle>
             <CardDescription>New enrollments over the past 6 months</CardDescription>
           </CardHeader>
           <CardContent>
-            {/* <EnrollmentChart /> */}
+            {/* <EnrollmentChart /> 
           </CardContent>
         </Card>
         <Card>
@@ -58,10 +58,10 @@ export function DashboardOverview() {
             <CardDescription>Course completion rates by subject</CardDescription>
           </CardHeader>
           <CardContent>
-            {/* <CompletionRateChart /> */}
+            {/* <CompletionRateChart /> 
           </CardContent>
         </Card>
-      </div>
+      </div> */}
 
       <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0">
@@ -79,7 +79,7 @@ export function DashboardOverview() {
         </CardContent>
       </Card>
 
-      <Card>
+      {/* <Card>
         <CardHeader>
           <CardTitle>Recent Activity</CardTitle>
           <CardDescription>Latest updates from your courses and learners</CardDescription>
@@ -87,7 +87,7 @@ export function DashboardOverview() {
         <CardContent>
           <RecentActivity />
         </CardContent>
-      </Card>
+      </Card> */}
     </div>
   )
 }

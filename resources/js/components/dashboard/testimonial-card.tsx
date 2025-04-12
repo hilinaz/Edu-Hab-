@@ -12,8 +12,11 @@ interface TestimonialCardProps {
 
 export default function TestimonialCard({ quote, author, role, company, rating }: TestimonialCardProps) {
   return (
+
+
     <Card className="flex h-full flex-col justify-between">
       <CardHeader>
+    
         <div className="flex space-x-1">
           {Array.from({ length: 5 }).map((_, i) => (
             <Star key={i} className={`h-5 w-5 ${i < rating ? "fill-primary text-primary" : "fill-muted text-muted"}`} />
@@ -25,7 +28,7 @@ export default function TestimonialCard({ quote, author, role, company, rating }
       </CardContent>
       <CardFooter className="flex items-center gap-4 border-t pt-4">
         <div className="h-10 w-10 overflow-hidden rounded-full bg-muted">
-          <Image
+          <img
             src={`/placeholder.svg?height=40&width=40&text=${author.charAt(0)}`}
             width={40}
             height={40}

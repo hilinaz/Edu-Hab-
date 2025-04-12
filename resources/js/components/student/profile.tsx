@@ -60,7 +60,7 @@ export function UserProfile() {
         <div className="flex items-center justify-between">
           <CardTitle>Profile</CardTitle>
           <Button variant="ghost" size="icon">
-            <Link href="/student/profile/edit">
+            <Link href="1/profile/edit">
               <Edit className="h-4 w-4" />
             </Link>
           </Button>

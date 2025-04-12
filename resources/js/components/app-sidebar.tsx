@@ -4,7 +4,7 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { BookOpen, BookAIcon, UserRoundIcon, User, LayoutGrid, Contact } from 'lucide-react';
+import { BookOpen, BookAIcon, UserRoundIcon, PlusCircle, User, LayoutGrid, Contact } from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
@@ -19,8 +19,13 @@ const mainNavItems: NavItem[] = [
         icon: BookAIcon,
     },
     {
+        title: 'Create Course',
+        href: '/courses/create',
+        icon: PlusCircle,
+    },
+    {
         title: 'Profile',
-        href: '/student/profile',
+        href: '/profile/',
         icon: UserRoundIcon,
     },
     {

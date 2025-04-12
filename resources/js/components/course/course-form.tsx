@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"
-import { useRemember } from "@inertiajs/react"
+import { useRemember, router } from "@inertiajs/react"
 
 
 // Types
@@ -31,7 +31,7 @@ interface Module {
 }
 
 interface Course {
-  id: string
+  // id: string
   title: string
   description: string
   instructor: string
@@ -46,7 +46,7 @@ interface Course {
 
 // Default course data
 const defaultCourse: Course = {
-  id: `course-${Date.now()}`,
+  // id: `course-${Date.now()}`,
   title: "",
   description: "",
   instructor: "",
@@ -387,12 +387,35 @@ export default function CourseForm() {
     }))
   }
 
-  const saveCourse = () => {
-    // Here you would typically save to a database
-    console.log("Saving course:", course)
-    toast("Your course has been saved successfully.")
-  }
-
+  
+    const saveCourse = () => {
+        const payload : Record<string, any> = {
+          title: course.title,
+          description: course.description,
+          // instructor: ,
+          created_by: 1,
+          price: course.price,
+          image: course.thumbnail,
+          // category: string
+          // level: string
+          duration: course.duration,
+          // isPublished: 
+        } 
+        console.log(payload);
+        router.post(
+            '/courses/create',
+            payload,
+            {
+                onSuccess: () => {
+                    toast.success("Your course has been saved successfully.");
+                },
+                onError: (errors) => {
+                    toast.error("Failed to save the course. Please check the details.");
+                    console.error("Validation errors:", errors);
+                },
+            }
+        );
+    };
   return (
     <div className="grid grid-cols-1 gap-8">
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">

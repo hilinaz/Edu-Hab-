@@ -22,7 +22,7 @@ export default function StudentDashboard() {
                 <Tabs defaultValue="learning">
                     <TabsList>
                         <TabsTrigger value="learning">Learning Activites</TabsTrigger>
-                        <TabsTrigger value="teaching">Teaching Activites</TabsTrigger>
+                        <TabsTrigger value="teaching">My Postings</TabsTrigger>
                     </TabsList>
                     <TabsContent value="learning"> 
                         <StudentDashboardComponent />

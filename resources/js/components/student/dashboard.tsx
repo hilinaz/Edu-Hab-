@@ -9,21 +9,21 @@ import { Achievements } from "@/components/student/achievements"
 export function StudentDashboardComponent() {
   return (
     <div className="grid gap-4 md:gap-8 mt-4">
-      <h1>Courses</h1>
+      {/* <h1>Courses</h1> */}
       <Tabs defaultValue="enrolled" className="space-y-4">
         <TabsList>
-          <TabsTrigger value="enrolled">My Courses</TabsTrigger>
-          <TabsTrigger value="available">Available Courses</TabsTrigger>
+          <TabsTrigger value="enrolled"><h1> My Courses</h1></TabsTrigger>
+          {/* <TabsTrigger value="available">Available Courses</TabsTrigger> */}
         </TabsList>
         <TabsContent value="enrolled" className="space-y-4">
           <EnrolledCourses />
         </TabsContent>
-        <TabsContent value="available" className="space-y-4">
+        {/* <TabsContent value="available" className="space-y-4">
           <AvailableCourses />
-        </TabsContent>
+        </TabsContent> */}
       </Tabs>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      {/* <div className="grid gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Learning Progress</CardTitle>
@@ -32,8 +32,8 @@ export function StudentDashboardComponent() {
           <CardContent>
             <LearningProgress />
           </CardContent>
-        </Card>
-        <Card>
+        </Card> */}
+        {/* <Card>
           <CardHeader>
             <CardTitle>Upcoming Deadlines</CardTitle>
             <CardDescription>Assignments and exams due soon</CardDescription>
@@ -41,8 +41,8 @@ export function StudentDashboardComponent() {
           <CardContent>
             <UpcomingDeadlines />
           </CardContent>
-        </Card>
-      </div>
+        </Card> */}
+      {/* </div> */}
 
       <Card>
         <CardHeader>

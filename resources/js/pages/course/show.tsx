@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import AppLayout from "@/layouts/app-layout"
 import { BreadcrumbItem } from "@/types"
-import { Head } from "@inertiajs/react"
+import { Head, Link } from "@inertiajs/react"
 import { BookOpen, Search } from "lucide-react"
 
 function CoursesPage() {
@@ -15,8 +15,11 @@ function CoursesPage() {
                 <div className="flex items-center justify-between">
                     <h1 className="text-3xl font-bold tracking-tight">Courses</h1>
                     <Button>
-                        <BookOpen className="mr-2 h-4 w-4" />
-                        My Learning
+                    <BookOpen className="mr-2 h-4 w-4" />
+                        <Link href="/dashboard">
+                        My Learning 
+                        </Link>
+                       
                     </Button>
                 </div>
                 <p className="text-muted-foreground">

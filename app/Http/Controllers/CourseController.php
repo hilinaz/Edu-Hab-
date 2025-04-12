@@ -22,7 +22,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('course/create');
     }
 
     /**
@@ -30,8 +30,12 @@ class CourseController extends Controller
      */
     public function store(StoreCourseRequest $request)
     {
+        // this will be used to create a new course
         //
+        $course = Course::create($request->all());
+        return Inertia::render('dashboard');
     }
+
 
     /**
      * Display the specified resource.
@@ -46,7 +50,7 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+        return Inertia::render('course/edit');
     }
 
     /**
